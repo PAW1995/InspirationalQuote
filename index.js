@@ -115,8 +115,7 @@ const part1 = [
     return quoteFinal;
   };
 
-  part1Selector();
-  part2Selector();
-  part3Selector();
-  concatinator();
-  console.log(concatinator());
+ document.getElementById('generate-quote').addEventListener('click', () => {
+    const quote = concatinator();
+    document.getElementById('quote').innerText = quote;
+});
