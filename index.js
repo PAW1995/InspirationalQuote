@@ -119,3 +119,5 @@ const part1 = [
     const quote = concatinator();
     document.getElementById('quote').innerText = quote;
 });
+
+
