@@ -95,29 +95,16 @@ const part1 = [
     "and new doors will open for you."
   ];
   
-  const part1Selector = () => {
-    const getRanNum1 = Math.floor(Math.random()*30);
-    return part1[getRanNum1];
-  };
+function generateQuote() {
+    const part1Selector = () => part1[Math.floor(Math.random() * part1.length)];
+    const part2Selector = () => part2[Math.floor(Math.random() * part2.length)];
+    const part3Selector = () => part3[Math.floor(Math.random() * part3.length)];
+    
+    return part1Selector() + " " + part2Selector() + " " + part3Selector();
+}
 
-  const part2Selector = () => {
-    const getRanNum2 = Math.floor(Math.random()*30);
-    return part2[getRanNum2];
-  };
-
-  const part3Selector = () => {
-    const getRanNum3 = Math.floor(Math.random()*30);
-    return part3[getRanNum3];
-  };
-
-  const concatinator = () => {
-    const quoteFinal = part1Selector() + " " + part2Selector() + " " + part3Selector();
-    return quoteFinal;
-  };
-
- document.getElementById('generate-quote').addEventListener('click', () => {
-    const quote = concatinator();
-    document.getElementById('quote').innerText = quote;
-});
-
-
+function displayQuote() {
+    const linkToHtml = document.getElementById('quoteDisplay');
+    const newQuote = generateQuote();
+    linkToHtml.innerHTML = newQuote;
+}
